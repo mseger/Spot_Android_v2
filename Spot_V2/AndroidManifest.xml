@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="us.getspot.v2"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".chooseSpot"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="createSpot"></activity>
+        <activity android:name="fileDetail"></activity>
+        <activity android:name="history"></activity>
+        <activity android:name="login"></activity>
+        <activity android:name="filePreview"></activity>
+        <activity android:name="signUp"></activity>
+        <activity android:name="spotExplanation"></activity>
+        <activity android:name="theSpot"></activity>
+
+    </application>
+    <uses-sdk android:minSdkVersion="8" />
+
+</manifest> 
