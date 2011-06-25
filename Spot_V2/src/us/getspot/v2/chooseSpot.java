@@ -1,8 +1,14 @@
 package us.getspot.v2;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.markupartist.android.widget.ActionBar;
 
@@ -31,10 +37,62 @@ public class chooseSpot extends Activity {
 		actionBar.addAction(goToNewSpot);
 		
 		// log in and out
-		Intent loginIntent = new Intent(chooseSpot.this, login.class);
-		final ActionBar.Action goToLogin = new ActionBar.IntentAction(this, loginIntent, R.drawable.profile);
-		actionBar.addAction(goToLogin);
+		actionBar.addAction(new loginAction());
 		
 
+    }
+    private class loginAction implements ActionBar.Action {
+
+		//@Override
+		public void performAction(View view) {
+
+			final CharSequence[] choices = {"Login", "Logout"};
+			AlertDialog.Builder builder = new AlertDialog.Builder(chooseSpot.this);
+			builder.setTitle("Choose your action");
+			builder.setItems(choices, new DialogInterface.OnClickListener() {
+				
+				public void onClick(DialogInterface dialog, int item) {
+					SharedPreferences sharedPreferences = getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
+
+					if(item == 0){
+						// choosing to login
+						final AlertDialog.Builder loginBuilder = new AlertDialog.Builder(chooseSpot.this);
+						loginBuilder.setTitle("Login");
+						
+						loginBuilder.setTitle("Username");
+									
+						// set up an EditText to get the comment
+						final EditText input_username = new EditText(chooseSpot.this);
+						loginBuilder.setView(input_username);
+									
+						loginBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+										
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							String userName = input_username.getText().toString();										}
+							});
+									
+						loginBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+										
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+							}
+						});
+									
+						loginBuilder.show(); 
+					}else{
+							Toast.makeText(chooseSpot.this, "Logout Successful", Toast.LENGTH_LONG).show();
+					}
+				}
+			});
+			AlertDialog alert = builder.create();
+			alert.show();
+
+		}
+		@Override
+		public int getDrawable() {
+			return R.drawable.profile;
+		}
     }
 }
