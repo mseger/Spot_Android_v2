@@ -39,8 +39,9 @@ containing a value of this type.
         public static final int actionbar_btn_pressed=0x7f020004;
         public static final int history_40px=0x7f020005;
         public static final int icon=0x7f020006;
-        public static final int plus=0x7f020007;
-        public static final int profile=0x7f020008;
+        public static final int logo_alpha_100px=0x7f020007;
+        public static final int plus=0x7f020008;
+        public static final int profile=0x7f020009;
     }
     public static final class id {
         public static final int actionbar=0x7f08000a;
@@ -53,7 +54,17 @@ containing a value of this type.
         public static final int actionbar_item=0x7f080009;
         public static final int actionbar_progress=0x7f080007;
         public static final int actionbar_title=0x7f080008;
+        public static final int captionRow=0x7f080010;
+        public static final int createspot=0x7f08000f;
+        public static final int describethespot=0x7f08000d;
+        public static final int imageView=0x7f080011;
+        public static final int mapview=0x7f080012;
+        public static final int namethespot=0x7f08000b;
         public static final int screen=0x7f080000;
+        public static final int spotDescription=0x7f08000e;
+        public static final int spotName=0x7f08000c;
+        public static final int spotdescription=0x7f080014;
+        public static final int zoom=0x7f080013;
     }
     public static final class layout {
         public static final int actionbar=0x7f030000;

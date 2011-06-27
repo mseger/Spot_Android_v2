@@ -32,7 +32,7 @@ public class chooseSpot extends Activity {
 		actionBar.addAction(goToHistory);
 		
 		// create new Spot
-		Intent newSpotIntent = new Intent(chooseSpot.this, theSpot.class);
+		Intent newSpotIntent = new Intent(chooseSpot.this, createSpot.class);
 		final ActionBar.Action goToNewSpot = new ActionBar.IntentAction(this, newSpotIntent, R.drawable.plus);
 		actionBar.addAction(goToNewSpot);
 		

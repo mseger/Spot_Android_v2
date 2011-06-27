@@ -6,5 +6,9 @@
 	
 	<com.markupartist.android.widget.ActionBar
 		android:id="@+id/actionbar" style="@style/ActionBar" />	
+		
+	<TextView android:layout_width="fill_parent"
+		android:id="@+id/spotdescription" android:textSize="25dp"
+		android:layout_height="wrap_content" android:textColor="#8b8989" />
 			
 </LinearLayout>
